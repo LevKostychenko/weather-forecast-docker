@@ -26,7 +26,7 @@ namespace WeatherForecastService.Services
             {
                 throw new GeocodingException($"Could not resolve country code for country: {country}");
             }
-            // TODO: Add Polly
+
             var request = new HttpRequestMessage(HttpMethod.Get, $"?name={city}&countryCode={countryCode}&count={MaxResults}");
             var response = await http.SendAsync(request, token);
 

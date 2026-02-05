@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration;
+using WeatherForecastService.Constants;
 using WeatherForecastService.Extensions;
 using WeatherForecastService.Models.Options;
 using WeatherForecastService.Services;
@@ -27,8 +28,8 @@ builder.Services
     .AddScoped<IForecastSourceManager, ForecastSourceManager>()
     .AddScoped<IForecastService, ForecastService>()
     .AddForecastSource<OpenMeteoSource>()
-    .AddForecastSourceWithOptions<WindySource, WindySourceOptions>(windySourceOptions)
-    .AddForecastSourceWithOptions<MeteoblueSource, MeteoblueSourceOptions>(meteoblueSourceOptions);
+    .AddNamedForecastSourceWithOptions<WindySource, WindySourceOptions>(windySourceOptions, HttpConstants.WindyHttpClientName)
+    .AddNamedForecastSourceWithOptions<MeteoblueSource, MeteoblueSourceOptions>(meteoblueSourceOptions, HttpConstants.MeteoblueHttpClientName);
 
 var app = builder.Build();
 

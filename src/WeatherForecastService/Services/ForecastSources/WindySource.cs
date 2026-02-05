@@ -44,10 +44,7 @@ namespace WeatherForecastService.Services.ForecastSources
                 }),
             };
 
-            // TODO: Add polly
-            var client = httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri(options.Value.BaseUrl);
-            client.Timeout = TimeSpan.FromSeconds(options.Value.TimeoutSeconds);
+            var client = httpClientFactory.CreateClient(HttpConstants.WindyHttpClientName);
             var response = await client.SendAsync(request, token);
             response.EnsureSuccessStatusCode();
 

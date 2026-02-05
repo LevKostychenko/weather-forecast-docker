@@ -6,7 +6,6 @@ namespace WeatherForecastService.Services
     {
         public async Task<string?> ResolveCountryCodeAsync(string countryName, CancellationToken token = default)
         {
-            // TODO: Add Polly
             var request = new HttpRequestMessage(HttpMethod.Get, $"name/{countryName.ToLowerInvariant()}?fields=cca2");
             var response = await http.SendAsync(request, token);
             response.EnsureSuccessStatusCode();
