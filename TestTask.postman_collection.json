@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "c037b1af-1f3f-43d3-80a4-aaeb9fadd39c",
+		"name": "TestTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8106001"
+	},
+	"item": [
+		{
+			"name": "Warsaw",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Berlin",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

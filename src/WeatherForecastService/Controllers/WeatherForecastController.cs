@@ -6,7 +6,7 @@ namespace WeatherForecastService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController(IForecastService service, ICacheService cacheService) : ControllerBase
+    public class WeatherForecastController(IForecastService service) : ControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> Get(string city, string country, DateTime day)
